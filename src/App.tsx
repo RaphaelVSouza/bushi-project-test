@@ -1,5 +1,6 @@
 import SectionCarousel from 'components/SectionCarousel'
 import Header from 'components/Header'
+import SectionAnimes from 'components/SectionAnimes'
 import SectionWhatDoHere from 'components/SectionWhatDoHere'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Header/>
       <SectionCarousel/>
       <SectionWhatDoHere/>
+      <SectionAnimes />
     </div>
   );
 }
