@@ -1,15 +1,32 @@
+@import '../../sassStyles/variables';
+
 .header {
-    position: absolute;
+    position: fixed;
+    background-color: $white;
     z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
 
     nav {
-        height: 8rem;
+        height: 6rem;
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @media (min-width: $desktop-breakpoint) {
+            height: 8rem;
+        }
+
+        img {
+            width: 10rem;
+            height: 25rem;
+
+            @media (min-width: $desktop-breakpoint) {
+                width: 16rem;
+                height: 4rem;
+            }
+        }
     }
 
 }
