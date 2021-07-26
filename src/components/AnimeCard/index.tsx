@@ -7,7 +7,7 @@ const AnimeCard = () => (
             <picture>
             <source 
               srcSet={`${process.env.PUBLIC_URL}/anime-desktop.png`} 
-              media="(min-width: 1024px)" 
+              media="(min-width: 1440px)" 
             />
       
             <img 
@@ -24,8 +24,10 @@ const AnimeCard = () => (
               alt="a arrow pointing to right"
             />
 
-             <span className="anime-card__details desktop-only">
-            </span>
+             <div className="details desktop-only">
+              <p>Episódios: 12</p>
+              <p>Estrelas: **</p>
+            </div>
           </div>
 </li>
 )
