@@ -26,7 +26,7 @@
        margin: 0 auto;
         @media (min-width: $desktop-breakpoint) {
             grid-template-columns: 1fr 1fr 1fr;
-            place-items: center;
+            place-items: baseline center;
             grid-template-rows: none;
             max-width: none;
             margin: 0;
