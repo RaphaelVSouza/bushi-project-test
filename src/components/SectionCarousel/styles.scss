@@ -4,8 +4,9 @@
     height: 60.1rem;
     width: 100%;
     background-position: -72rem;
-
-    @media (min-width: $desktop-breakpoint) {
+    background-repeat: no-repeat;
+    background-size: cover;
+    @media (min-width: 700px) {
         background-position: center;
     }
 
