@@ -1,45 +1,44 @@
 import './styles.scss'
 
 const SectionWhatDoHere = () => (
-  <section id="what-do-here" className="section-what-do-here">
-    <h2>o que fazer por aqui?</h2> 
-    <div className="container">
-      <article className="the-best">
-        <img 
-          className="the-best__icon" 
+  
+  <section className="what-do-here">
+    <h1>O que fazer por aqui?</h1>
+    <ul>
+      <li className="item">
+        <img  
+          id="fire-icon"
           src={`${process.env.PUBLIC_URL}/fire.svg`} 
-          alt="a fire illustration" 
+          alt="Ilustração de uma chama" 
         />
-        <div className="the-best__text-wrapper">
-          <h3 className="title">Os Melhores</h3>
-          <p className="text">Veja o que esta pegando fogo, no mundo dos animes. Os animes mais bem avaliados pela galera!</p>
+        <div>
+          <h2>Os melhores</h2>
+          <p>Veja o que esta pegando fogo, no mundo dos animes. Os animes mais bem avaliados pela galera!</p>
         </div>
-      </article>
-
-      <article className="info">
+      </li>
+      <li className="item">
         <img 
-          className="info__icon" 
+          id="infinite-icon"
           src={`${process.env.PUBLIC_URL}/infinite.svg`} 
-          alt="a infinite symbol" 
+          alt="Um símbolo de infinito" 
         />
-        <div className="info__text-wrapper">
-          <h3 className="title">Informações</h3>
-          <p className="text">Procure informações dos seus animes  preferidos.</p>
+        <div>
+          <h2>Informações</h2>
+          <p>Procure informações dos seus animes  preferidos.</p>
         </div>
-      </article>
-      
-      <article className="your-list">
+      </li>
+      <li className="item">
         <img 
-          className="your-list__icon"
+          id="dragon-icon"
           src={`${process.env.PUBLIC_URL}/dragon.svg`} 
-          alt="a dragon illustration" />
-        <div className="your-list__text-wrapper">
-          <h3 className="title">Sua Lista</h3>
-          <p className="text">Comece agora mesmo a montar sua lista de animes preferidos, e seja notificado quando um episódio novo for ao ar!</p>
+          alt="Uma ilustração de um dragão" 
+        />
+        <div>
+          <h2>Sua Lista</h2>
+          <p>Comece agora mesmo a montar sua lista de animes preferidos, e seja notificado quando um episódio novo for ao ar!</p>
         </div>
-      </article>
-
-    </div>
+      </li>
+    </ul>
   </section>
 )
 

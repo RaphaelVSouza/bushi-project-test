@@ -1,32 +1,37 @@
-@import '../../sassStyles/variables';
+@import '../../styles/variables';
 
 .header {
-    position: fixed;
-    background-color: $white;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    width: 100%;
+  position: fixed;
+  background-color: $bg-header;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100%;
 
-    nav {
-        height: 6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px  ;
 
-        @media (min-width: $desktop-breakpoint) {
-            height: 8rem;
-        }
-
-        img {
-            width: 10rem;
-            height: 25rem;
-
-            @media (min-width: $desktop-breakpoint) {
-                width: 16rem;
-                height: 4rem;
-            }
-        }
+    @media (min-width: $desktop-breakpoint){
+      height: 77px;
     }
+
+    .logo{
+      background-repeat: no-repeat;
+      background-size: contain;
+      font-size: 0;
+      text-indent: -9999px;
+      width: 100px;
+      height: 25px;
+      @media (min-width: $desktop-breakpoint){
+        width: 163px;
+        height: 41px;
+      }
+    }
+
+    
+  }
 
 }

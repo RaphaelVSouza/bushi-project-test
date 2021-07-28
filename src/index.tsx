@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'sassStyles/_typography.scss'
-import 'sassStyles/_globals.scss'
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import './styles/_typography.scss'
+import './styles/_globals.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { Provider } from 'react-redux';
+import reducers from 'reducers';
+
+
+const store = createStore(reducers, applyMiddleware(thunk));
+
 ReactDOM.render(
   <React.StrictMode>
-    <div className="container">
-      <App />
-    </div>
+    <Provider store={store}>
+      <div className="container">
+        <App />
+      </div>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,4 +1,4 @@
-@import '../../sassStyles/variables';
+@import '../../styles/variables';
 
 .anime-card {
     display: flex;
@@ -41,10 +41,17 @@
             height: 12.5rem;
         }
 
-        .thumbnail {
+        .image-container {
+            width: 144px;
+            height: 60px;
             position: absolute;
             left: 0;
             transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .thumbnail {
+            width: 100%;
         }
 
         h4 {

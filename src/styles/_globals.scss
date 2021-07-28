@@ -11,13 +11,16 @@
 }
 
 body {
-    font-family: Roboto, 'sans-serif';
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    box-sizing: border-box;
-    box-sizing: border-box;
-    height: 100vh;
-    background-color: $white;
+  font-family: Roboto, 'sans-serif';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  color: $black;
+  background-color: $white;
+  padding-top: 60px;
+  @media (min-width: $desktop-breakpoint){
+    padding-top: 77px;
+  }
 }
 
 .mobile-only {
@@ -45,6 +48,8 @@ ol, ul {
 }
 
 .container {
-  max-width: 1440px;
-  margin: 0 auto;
+  @media (min-width: $desktop-breakpoint){
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }

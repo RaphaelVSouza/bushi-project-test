@@ -1,5 +1,4 @@
-@import '../../sassStyles/variables';
-@use "sass:math";
+@import '../../styles/variables';
 
 .section-animes {
     margin-top: 20rem;
@@ -35,7 +34,7 @@
 
     }
 
-    .animes-list {
+    ul {
         display: flex;
         flex-direction: column;
         align-items: center;

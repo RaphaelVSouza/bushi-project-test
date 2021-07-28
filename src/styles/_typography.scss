@@ -2,13 +2,12 @@
 @import './variables';
 
 h2 {
-
     font-size: 1.6rem;
     font-style: normal;
     font-weight: 700;
     line-height: 1.9rem;
     letter-spacing: 0.125em;
-    text-align: center;
+   
 
     @media (min-width: $desktop-breakpoint){
         font-size: 3.1rem;

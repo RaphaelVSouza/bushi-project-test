@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.section-anime-details {
+    padding: 100px;
+
+    .details {
+        display: flex;
+    }
+    
+    .other-details {
+        background-color: $bg-other-details;
+        width: 100%;
+        height: 900px;
+    }
+}
