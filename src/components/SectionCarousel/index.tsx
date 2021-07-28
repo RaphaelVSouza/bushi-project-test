@@ -25,7 +25,7 @@ const SectionCarousel = () => (
     </div>
 
     <a 
-      href="#what-do-here"
+      href="#top-animes"
       className="anchor"
       aria-label="Uma seta apontando para baixo, ao ser clicada leva a seção de animes mais vistos"
       style={{ backgroundImage:`url(${process.env.PUBLIC_URL}/arrow-down.svg)`}}

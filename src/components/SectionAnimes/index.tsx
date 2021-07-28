@@ -27,7 +27,7 @@ useEffect(()=> {
 }, [])
  
   return (
-    <section className="section-animes">
+    <section className="section-animes" id="top-animes">
       <header>
         <img 
           src={`${process.env.PUBLIC_URL}/infinite.svg`} 
