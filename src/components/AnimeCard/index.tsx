@@ -45,7 +45,7 @@ const AnimeCard = ({ title, coverImage, averageRating, episodeCount }: AnimeCard
         />
         </picture>
       </div>
-      {console.log({title})}
+
       <h4 className="title">Nome: {title}</h4> 
 
       <img 

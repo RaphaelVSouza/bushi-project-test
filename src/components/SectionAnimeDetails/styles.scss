@@ -2,7 +2,7 @@
 
 .section-anime-details {
     
-
+    padding: 3rem;
     @media (min-width: $desktop-breakpoint) {
         padding: 100px;
     }
@@ -16,6 +16,11 @@
             flex-direction: row;
         }
 
+        @media (max-width: $desktop-breakpoint){
+            .thumbnail{
+                width: 100%;        
+            }
+        }
         h1 {
             font-size: 4rem;
             font-style: normal;
@@ -36,7 +41,12 @@
         }
 
         .synopsis {
-            margin: 100px 0 0 60px;
+            @media (min-width: $desktop-breakpoint){
+                margin: 100px 0 0 60px;
+            }
+            @media (max-width: $desktop-breakpoint){
+                margin-top: 100px;
+            }
            
         }
 
@@ -78,7 +88,7 @@
         width: 100%;
         height: 983px;
         padding: 100px 0;
-        margin-top: 100px;
+        margin: 100px auto 0 auto;
 
         ul {
             margin: 0 auto;

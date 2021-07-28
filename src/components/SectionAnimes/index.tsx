@@ -38,8 +38,6 @@ useEffect(()=> {
       </header>
       <ul>
       {props.items && props.items.map(({ attributes }: any, index: number) => {
-
-        console.log(props.items[index])
         return (
           <Link to={{ pathname: '/anime', state: {
             animeDetails: { 
