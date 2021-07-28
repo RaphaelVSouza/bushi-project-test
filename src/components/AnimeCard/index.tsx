@@ -4,18 +4,32 @@ type AnimeCardProps = {
   title: string
   coverImage: {
     large: string
-    tiny: string
+    small: string
   },
-  posterImage: {
-    large: string
-    tiny: string
-  }
-  synopsis: string
   episodeCount: number
   averageRating: number
 }
 
-const AnimeCard = ({ title, coverImage, posterImage, averageRating, episodeCount, synopsis }: AnimeCardProps) => (
+const AnimeCard = ({ title, coverImage, averageRating, episodeCount }: AnimeCardProps) => {
+  function calcStars(rating: number) {
+    
+      if(rating <= 25)
+        return '*';
+      if(rating > 25 && rating <= 50) 
+        return '**';
+      if(rating > 50 && rating <= 75) 
+        return '***';
+      if(rating > 75 && rating <= 90)
+        return '****';
+      if(rating > 90)
+        return '*****';
+
+      return '';
+
+    }
+  
+
+  return (
   <li className="anime-card">
     <div className="anime-card__content">
       <div className="image-container">
@@ -26,7 +40,7 @@ const AnimeCard = ({ title, coverImage, posterImage, averageRating, episodeCount
           />
         <img 
           className="thumbnail" 
-          src={`${coverImage.tiny}`} 
+          src={`${coverImage.small}`} 
           alt={`${title} cover`} 
         />
         </picture>
@@ -42,10 +56,17 @@ const AnimeCard = ({ title, coverImage, posterImage, averageRating, episodeCount
 
       <div className="details desktop-only">
         <p>Episódios: {episodeCount}</p>
-        <p>Estrelas: **</p>
+        <p>Estrelas: {calcStars(averageRating)}</p>
       </div>
+
+      <img 
+        className="arrow-right desktop-only" 
+        src={`${process.env.PUBLIC_URL}/arrow-right.svg`} 
+        alt="a arrow pointing to right"
+      />
     </div>
   </li>
-)
+  )
+}
 
 export default AnimeCard

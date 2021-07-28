@@ -6,9 +6,29 @@
     align-items: flex-end;
     min-width: 38rem;
     width: 100%;
+    position: relative;
 
+    @media (max-width: $desktop-breakpoint){
+      padding: 0 4.10vw 0 16.666vw;
+    }
     @media (min-width: $desktop-breakpoint) {
-            width: 122rem
+      width: 1345px;
+      padding-left: 92px;
+      &:after {
+        content: '';
+        height: 100%;
+        width: 2px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 0;
+      }
+      &:nth-child(odd):after{
+        background-color: #E4E3E2;
+      }
+      &:nth-child(even):after{
+        background-color: #A5A5A5;
+      }
     }
 
     &:nth-child(odd) {
@@ -24,30 +44,64 @@
         
     }
 
+    .title{
+      max-width: 381px;
+      width: 100%;
+    /* white-space: nowrap; */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
     &__content {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        height: 10rem;
         min-width: 30rem;
-        width: 90%;
+        width: 100%;
         padding-right: 1.1rem;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 4px;
+        height: 10rem;
+        @media (max-width: $desktop-breakpoint){
+          padding-left: 22.22vw;
 
+        }
         @media (min-width: $desktop-breakpoint) {
-            width: 100%;
-            height: 12.5rem;
+          padding-left: 180px;
+          width: 100%;
+          height: 12.5rem;
         }
 
         .image-container {
-            width: 144px;
-            height: 60px;
             position: absolute;
             left: 0;
             transform: translate(-50%, -50%);
             object-fit: cover;
+            width: 246px;
+            height: 103px;
+            overflow: hidden;
+            border-radius: 24px;
+            top: 50%;
+            transform: translateY(-50%);
+            left: -98px;
+            @media (max-width: $desktop-breakpoint){
+              width: 32.85vw;
+              height: 60px;
+              left: -12.077vw;
+              height: 60px;
+            }
+            img{
+              position: absolute;
+              top: 0;
+              left: 50%;
+              height: 100%;
+              width: auto;
+              transform: translateX(-50%);
+            }
         }
 
         .thumbnail {
@@ -55,8 +109,13 @@
         }
 
         h4 {
-            margin-left: 8rem;
+            // margin-left: 8rem;
             color: $anime-title;
+        }
+
+        .details {
+            width: 20rem;
+
         }
     }
 }

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
 import './styles.scss'
 import AnimeCard from 'components/AnimeCard';
+import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state: any) => {
   return {
@@ -38,17 +39,24 @@ useEffect(()=> {
       <ul>
       {props.items && props.items.map(({ attributes }: any, index: number) => {
 
-        console.log(attributes)
+        console.log(props.items[index])
         return (
-        <AnimeCard 
-          key={index} 
-          title={attributes.abbreviatedTitles[0] || attributes.canonicalTitle} 
-          coverImage={attributes.coverImage ? attributes.coverImage : ''} 
-          episodeCount={attributes.episodeCount} 
-          averageRating={attributes.averageRating} 
-          synopsis={attributes.synopsis} 
-          posterImage={attributes.posterImage} 
-        />)
+          <Link to={{ pathname: '/anime', state: {
+            animeDetails: { 
+            title: attributes.abbreviatedTitles[0] || attributes.canonicalTitle,
+            posterImage: attributes.posterImage,
+            synopsis: attributes.synopsis}
+          }}
+          }>
+              <AnimeCard 
+                key={index} 
+                title={attributes.abbreviatedTitles[0] || attributes.canonicalTitle} 
+                coverImage={attributes.coverImage ? attributes.coverImage : ''} 
+                episodeCount={attributes.episodeCount} 
+                averageRating={attributes.averageRating} 
+              />
+          </Link>
+            )
       }
       )}
       </ul>
@@ -57,20 +65,3 @@ useEffect(()=> {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionAnimes);
-
-// const [animes, setAnimes] = useState([]);
-  // useEffect(() => {
-  //     apiAnime
-  //     .get('?page[limit]=8&page[offset]=0')
-  //     .then(({ data: response }) => {
-  //         // { abbreviatedTitles[0], coverImage.tiny, coverImage.large, synopsis, episodeCount, averageRating }
-      
-  //         setAnimes(response.data)
-          
-  //     })
-  //     .catch(({ data: error }) => console.error(error))
-
-  //     console.log(animes)
-      
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [])
