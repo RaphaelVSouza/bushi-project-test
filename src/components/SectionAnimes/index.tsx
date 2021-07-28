@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { itemsFetchData } from 'actions/items';
 import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
@@ -23,7 +23,7 @@ const SectionAnimes = (props: any) => {
 useEffect(()=> {
   props.fetchData('?page[limit]=8&page[offset]=0');
 
-  console.log(props)
+// eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
  
   return (
