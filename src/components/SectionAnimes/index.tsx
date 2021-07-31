@@ -39,7 +39,7 @@ useEffect(()=> {
       <ul>
       {props.items && props.items.map(({ attributes }: any, index: number) => {
         return (
-          <Link to={{ pathname: '/anime', state: {
+          <Link key={id} to={{ pathname: '/anime', state: {
             animeDetails: { 
             title: attributes.abbreviatedTitles[0] || attributes.canonicalTitle,
             posterImage: attributes.posterImage,
