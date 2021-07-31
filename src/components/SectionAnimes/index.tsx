@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { itemsFetchData } from 'actions/items';
+import { animesFetchData } from 'redux/actions/fetchAnimes';
 import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
 import './styles.scss'
@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state: any) => {
   return {
-      items: state.items,
+      animes: state.animes,
   };
 };
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-      fetchData: () => dispatch(itemsFetchData('?page[limit]=8&page[offset]=0'))
+      fetchData: () => dispatch(animesFetchData('?page[limit]=8&page[offset]=0'))
   };
 };
 
@@ -37,7 +37,7 @@ useEffect(()=> {
         
       </header>
       <ul>
-      {props.items && props.items.map(({ attributes }: any, index: number) => {
+      {props.animes && props.animes.map(({id, attributes }: any) => {
         return (
           <Link key={id} to={{ pathname: '/anime', state: {
             animeDetails: { 
@@ -47,7 +47,6 @@ useEffect(()=> {
           }}
           }>
               <AnimeCard 
-                key={index} 
                 title={attributes.abbreviatedTitles[0] || attributes.canonicalTitle} 
                 coverImage={attributes.coverImage ? attributes.coverImage : ''} 
                 episodeCount={attributes.episodeCount} 
