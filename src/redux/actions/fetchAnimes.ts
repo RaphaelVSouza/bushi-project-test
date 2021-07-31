@@ -2,21 +2,21 @@ import apiAnime from "services/apiAnime";
 
 export function animesHaveError(bool: boolean) {
     return {
-        type: 'animes_HAVE_ERROR',
+        type: 'ANIMES_HAVE_ERROR',
         hasError: bool
     };
 }
 
 export function animesAreLoading(bool: boolean) {
     return {
-        type: 'animes_ARE_LOADING',
+        type: 'ANIMES_ARE_LOADING',
         isLoading: bool
     };
 }
 
 export function animesFetchDataSuccess(animes: any) {
     return {
-        type: 'animes_FETCH_DATA_SUCCESS',
+        type: 'ANIMES_FETCH_DATA_SUCCESS',
         animes
     };
 }

@@ -1,6 +1,6 @@
-const ANIMES_HAVE_ERROR = 'animes_HAVE_ERROR';
-const ANIMES_ARE_LOADING = 'animes_ARE_LOADING';
-const ANIMES_FETCH_DATA_SUCCESS = 'animes_FETCH_DATA_SUCCESS';
+const ANIMES_HAVE_ERROR = 'ANIMES_HAVE_ERROR';
+const ANIMES_ARE_LOADING = 'ANIMES_ARE_LOADING';
+const ANIMES_FETCH_DATA_SUCCESS = 'ANIMES_FETCH_DATA_SUCCESS';
 
 export function animesHaveError(state = false, action: any) {
   switch (action.type) {
