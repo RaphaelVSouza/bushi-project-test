@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
 import './styles/_typography.scss'
 import './styles/_globals.scss'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { Provider } from 'react-redux';
-import reducers from 'redux/reducers';
-
-
-const store = createStore(reducers, applyMiddleware(thunk));
+import store from 'store'
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +14,7 @@ ReactDOM.render(
       <div className="container">
         <App />
       </div>
+
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

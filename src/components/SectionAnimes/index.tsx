@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { animesFetchData } from 'redux/actions/fetchAnimes';
+import { animesFetchData } from 'store/actions/fetchAnimes';
 import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
 import './styles.scss'
