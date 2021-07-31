@@ -14,12 +14,12 @@ const mapStateToProps = (state: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
   return {
-      fetchData: () => dispatch(animesFetchData('?page[limit]=8&page[offset]=0'))
+      fetchData: (url: string) => dispatch(animesFetchData(url))
   };
 };
 
 const SectionAnimes = (props: any) => {
- 
+
 useEffect(()=> {
   props.fetchData('?page[limit]=8&page[offset]=0');
 
