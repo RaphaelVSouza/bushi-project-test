@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { animesFetchData } from 'store/actions/fetchAnimes';
 import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
