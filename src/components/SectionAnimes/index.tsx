@@ -18,10 +18,14 @@ const mapDispatchToProps = (dispatch: any) => {
   };
 };
 
-const SectionAnimes = (props: any) => {
+type SectionAnimesProps = {
+  fetchData: (url: string) => void,
+  animes: Array<object | undefined>
+}
+const SectionAnimes = ({fetchData, animes}: SectionAnimesProps) => {
 
 useEffect(()=> {
-  props.fetchData('?page[limit]=8&page[offset]=0');
+  fetchData('?page[limit]=8&page[offset]=0');
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
@@ -37,7 +41,7 @@ useEffect(()=> {
         
       </header>
       <ul>
-      {props.animes && props.animes.map(({id, attributes }: any) => {
+      {animes && animes.map(({id, attributes }: any) => {
         return (
           <Link key={id} to={{ pathname: '/anime', state: {
             animeDetails: { 
