@@ -1,36 +1,39 @@
 import apiAnime from "services/apiAnime";
 
-export function animesHaveError(bool: boolean) {
+export function animesHaveError(hasError: boolean) {
     return {
         type: 'ANIMES_HAVE_ERROR',
-        hasError: bool
+        hasError
     };
 }
 
-export function animesAreLoading(bool: boolean) {
+export function animesAreLoading(isLoading: boolean) {
     return {
         type: 'ANIMES_ARE_LOADING',
-        isLoading: bool
+        isLoading
     };
 }
 
-export function animesFetchDataSuccess(animes: any) {
+export function animesFetchDataSuccess(animes: Array<object | undefined>) {
     return {
         type: 'ANIMES_FETCH_DATA_SUCCESS',
         animes
     };
 }
 
-export function animesFetchData(url: string) {
-    return (dispatch: any) => {
-        dispatch(animesAreLoading(true));
+type action = {
+    type: string
+    [key: string]: unknown
+}
 
+type animesDispatchFn = (action: action) => void
+
+export function animesFetchData(url: string) {
+    return (dispatch: animesDispatchFn) => {
+        dispatch(animesAreLoading(true));
         apiAnime.get(url)
             .then((response) => {
-                if (response.status !== 200) {
-                    throw Error(response.statusText);
-                }
-
+                if (response.status !== 200) throw Error(response.statusText) 
                 dispatch(animesAreLoading(false));
 
                 return response;
