@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { animesFetchData } from 'store/actions/fetchAnimes';
 import { connect } from 'react-redux';
 //import AnimeCard from 'components/AnimeCard'
@@ -6,26 +6,15 @@ import './styles.scss'
 import AnimeCard from 'components/AnimeCard';
 import { Link } from 'react-router-dom';
 
-const mapStateToProps = (state: any) => {
-  return {
-      animes: state.animes,
-  };
-};
-
-const mapDispatchToProps = (dispatch: any) => {
-  return {
-      fetchData: (url: string) => dispatch(animesFetchData(url))
-  };
-};
-
 type SectionAnimesProps = {
   fetchData: (url: string) => void,
   animes: Array<object | undefined>
 }
+
 const SectionAnimes = ({fetchData, animes}: SectionAnimesProps) => {
 
 useEffect(()=> {
-  fetchData('?page[limit]=8&page[offset]=0');
+  fetchData(`?page[limit]=10&page[offset]=0`);
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [])
@@ -42,6 +31,7 @@ useEffect(()=> {
       </header>
       <ul>
       {animes && animes.map(({id, attributes }: any) => {
+
         return (
           <Link key={id} to={{ pathname: '/anime', state: {
             animeDetails: { 
@@ -61,8 +51,22 @@ useEffect(()=> {
       }
       )}
       </ul>
+
     </section>
   )
 }
+
+const mapStateToProps = (state: any) => {
+  return {
+      animes: state.animes,
+  };
+};
+
+const mapDispatchToProps = (dispatch: any) => {
+
+  return {
+      fetchData: (url: string) => dispatch(animesFetchData(url))
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SectionAnimes);
